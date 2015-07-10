@@ -1,0 +1,39 @@
+##############################################
+# Syntax Coloring Map For SimpleRobot #
+##############################################
+
+##############################################
+# Datatypes (KEYWORD1)
+##############################################
+
+SimpleRobot	KEYWORD1
+
+##############################################
+# Methods and Functions (KEYWORD2)
+##############################################
+
+# Set Pins
+setMotorIzq	KEYWORD2
+setMotorDer	KEYWORD2
+setSensorTacto	KEYWORD2
+setSensorDistancia	KEYWORD2
+
+# Movimiento
+avanzar	KEYWORD2
+retroceder	KEYWORD2
+detener	KEYWORD2
+girarAdelante	KEYWORD2
+girarAtras	KEYWORD2
+
+# Sensores
+esperarDistanciaMayor	KEYWORD2
+esperarDistanciaMenor	KEYWORD2
+esperarTactoPresionado	KEYWORD2
+esperarTactoSoltado	KEYWORD2
+estadoTacto	KEYWORD2
+medirDistancia	KEYWORD2
+
+
+##############################################
+# Constants (LITERAL1)
+##############################################
