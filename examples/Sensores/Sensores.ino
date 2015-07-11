@@ -9,6 +9,8 @@ void setup() {
   // Configurar pins de los sensores
   bot.setSensorTacto(11);
   bot.setSensorDistancia(0);
+  // Calibrar Sensor de Distancia
+  bot.calibrarDistancia(580, 450);
 
 }
 

@@ -14,6 +14,7 @@ SimpleRobot::SimpleRobot() {
 	setMotorIzq(4, 5, 6);
 	setSensorTacto(10);
 	setSensorDistancia(0);
+	calibrarDistancia(0, 1023);
 
 }
 
@@ -54,6 +55,15 @@ void SimpleRobot::setSensorTacto(byte pin) {
 void SimpleRobot::setSensorDistancia(byte pin){
 	
 	sDistancia = pin;
+
+}
+/**
+	Calibrar sensor de distancia
+*/
+void SimpleRobot::calibrarDistancia(int max, int min) {
+
+	sDistanciaMax = max;
+	sDistanciaMin = min;
 
 }
 
@@ -123,9 +133,15 @@ void SimpleRobot::girarAtras(int potenciaIzq, int potenciaDer) {
 	Lectura de Sensores
 */
 
-int SimpleRobot::medirDistancia() {
+int SimpleRobot::medirDistanciaRaw() {
 	delay(200);
 	return analogRead(sDistancia);
+}
+
+
+int SimpleRobot::medirDistancia() {
+	int d = map(medirDistanciaRaw(), sDistanciaMax, sDistanciaMin, 150, 20);
+	return d;
 }
 
 int SimpleRobot::estadoTacto() {

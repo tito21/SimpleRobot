@@ -40,14 +40,18 @@ public:
 
 	// Leer sensores
 	int medirDistancia();
+	int medirDistanciaRaw();
 	int estadoTacto();
 
-	// Esperar Sensores
+	// Esperar sensores
 	void esperarDistanciaMayor(int distancia);
 	void esperarDistanciaMenor(int distancia);
 
 	void esperarTactoPresionado();
 	void esperarTactoSoltado();
+
+	// Calibrar Sensores
+	void calibrarDistancia(int max, int min);
 
 private:
 
@@ -63,6 +67,9 @@ private:
 	byte sTacto;
 	byte sDistancia;
 
+	// Sensor distncia max - min
+	int sDistanciaMax;
+	int sDistanciaMin;
 
 
 };

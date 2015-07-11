@@ -17,6 +17,7 @@ setMotorIzq	KEYWORD2
 setMotorDer	KEYWORD2
 setSensorTacto	KEYWORD2
 setSensorDistancia	KEYWORD2
+calibrarDistancia	KEYWORD2
 
 # Movimiento
 avanzar	KEYWORD2
@@ -32,6 +33,7 @@ esperarTactoPresionado	KEYWORD2
 esperarTactoSoltado	KEYWORD2
 estadoTacto	KEYWORD2
 medirDistancia	KEYWORD2
+medirDistanciaRaw	KEYWORD2
 
 
 ##############################################
