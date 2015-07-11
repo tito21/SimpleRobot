@@ -140,7 +140,7 @@ int SimpleRobot::medirDistanciaRaw() {
 
 
 int SimpleRobot::medirDistancia() {
-	int d = map(medirDistanciaRaw(), sDistanciaMax, sDistanciaMin, 150, 20);
+	int d = map(medirDistanciaRaw(), sDistanciaMax, sDistanciaMin, 20, 150);
 	return d;
 }
 
