@@ -35,11 +35,13 @@ public:
 	void avanzar(int potencia);
 	void retroceder(int potencia);
 	void detener();
+	void girarIzquierda(int potencia);
+	void girarDerecha(int potencia);
 	void girarAdelante(int poteciaIzq, int potenciaDer);
 	void girarAtras(int poteciaIzq, int potenciaDer);
 
 	// Leer sensores
-	int medirDistancia();
+	float medirDistancia();
 	int medirDistanciaRaw();
 	int estadoTacto();
 

@@ -25,6 +25,8 @@ retroceder	KEYWORD2
 detener	KEYWORD2
 girarAdelante	KEYWORD2
 girarAtras	KEYWORD2
+girarIzquierda	KEYWORD2
+girarDerecha	KEYWORD2
 
 # Sensores
 esperarDistanciaMayor	KEYWORD2

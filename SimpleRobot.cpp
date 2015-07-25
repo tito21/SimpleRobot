@@ -12,7 +12,7 @@
 SimpleRobot::SimpleRobot() {
 	setMotorDer(1, 2, 3);
 	setMotorIzq(4, 5, 6);
-	setSensorTacto(10);
+	setSensorTacto(10);	
 	setSensorDistancia(0);
 	calibrarDistancia(0, 1023);
 
@@ -72,6 +72,8 @@ void SimpleRobot::calibrarDistancia(int max, int min) {
 */
 void SimpleRobot::avanzar(int potencia) {
 	
+	detener();
+
 	analogWrite(mDer, potencia);
 	analogWrite(mIzq, potencia);
 
@@ -84,6 +86,8 @@ void SimpleRobot::avanzar(int potencia) {
 }
 
 void SimpleRobot::retroceder(int potencia) {
+
+	detener();
 
 	analogWrite(mDer, potencia);
 	analogWrite(mIzq, potencia);
@@ -126,6 +130,31 @@ void SimpleRobot::girarAtras(int potenciaIzq, int potenciaDer) {
 	digitalWrite(mIzq1, LOW);
 	digitalWrite(mIzq2, HIGH);
 
+}
+
+void SimpleRobot::girarIzquierda(int potencia) {
+
+	analogWrite(mDer, potencia);
+	analogWrite(mIzq, potencia);
+
+	digitalWrite(mDer1, HIGH);
+	digitalWrite(mDer2, LOW);
+
+	digitalWrite(mIzq1, LOW);
+	digitalWrite(mIzq2, HIGH);
+
+}
+
+void SimpleRobot::girarDerecha(int potencia) {
+
+	analogWrite(mDer, potencia);
+	analogWrite(mIzq, potencia);
+
+	digitalWrite(mDer1, LOW);
+	digitalWrite(mDer2, HIGH);
+
+	digitalWrite(mIzq1, HIGH);
+	digitalWrite(mIzq2, LOW);
 
 }
 
@@ -139,8 +168,9 @@ int SimpleRobot::medirDistanciaRaw() {
 }
 
 
-int SimpleRobot::medirDistancia() {
-	int d = map(medirDistanciaRaw(), sDistanciaMax, sDistanciaMin, 20, 150);
+float SimpleRobot::medirDistancia() {
+	int valor = medirDistanciaRaw();
+	float d = 10650.08 * pow(valor,-0.935) - 10;
 	return d;
 }
 
